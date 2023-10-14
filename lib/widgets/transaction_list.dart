@@ -24,7 +24,7 @@ class TransactionList extends StatelessWidget {
                 ),
                 SizedBox(
                   height: constraints.maxHeight * 0.05,
-                ), //SS
+                ),
                 Text(
                   'No Transaction Added',
                   style: TextStyle(
