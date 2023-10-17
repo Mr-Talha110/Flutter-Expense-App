@@ -19,7 +19,7 @@ class TransactionList extends StatelessWidget {
                   height: constraints.maxHeight * 0.5,
                   child: Image.network(
                     'https://cdn.pixabay.com/photo/2014/09/03/07/57/question-mark-434152_1280.png',
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                   ),
                 ),
                 SizedBox(
