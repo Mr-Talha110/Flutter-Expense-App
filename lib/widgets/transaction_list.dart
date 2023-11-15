@@ -1,5 +1,3 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_constructors_in_immutables, sized_box_for_whitespace, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
-
 import 'package:flutter/material.dart';
 import '../models/transaction.dart';
 import 'package:intl/intl.dart';
@@ -8,14 +6,14 @@ class TransactionList extends StatelessWidget {
   final List<Transaction> transactions;
   final Function deleteTx;
 
-  TransactionList(this.transactions, this.deleteTx);
+  const TransactionList(this.transactions, this.deleteTx, {super.key});
   @override
   Widget build(BuildContext context) {
     return transactions.isEmpty
         ? LayoutBuilder(builder: (context, constraints) {
             return Column(
               children: [
-                Container(
+                SizedBox(
                   height: constraints.maxHeight * 0.5,
                   child: Image.network(
                     'https://cdn.pixabay.com/photo/2014/09/03/07/57/question-mark-434152_1280.png',
@@ -25,7 +23,7 @@ class TransactionList extends StatelessWidget {
                 SizedBox(
                   height: constraints.maxHeight * 0.05,
                 ),
-                Text(
+                const Text(
                   'No Transaction Added',
                   style: TextStyle(
                       fontFamily: 'coolvetica',
@@ -40,8 +38,9 @@ class TransactionList extends StatelessWidget {
             itemBuilder: (ctx, index) {
               return Card(
                 elevation: 4,
-                color: Color.fromARGB(255, 236, 236, 236),
-                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                color: const Color.fromARGB(255, 236, 236, 236),
+                margin:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
@@ -54,13 +53,13 @@ class TransactionList extends StatelessWidget {
                         child: FittedBox(
                             child: Text(
                           '\$${transactions[index].amount}',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: const TextStyle(fontWeight: FontWeight.bold),
                         )),
                       ),
                     ),
                     title: Text(
                       transactions[index].title,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontFamily: 'coolvetica',
                           // fontWeight: FontWeight.bold,
                           fontSize: 20,
@@ -68,29 +67,29 @@ class TransactionList extends StatelessWidget {
                     ),
                     subtitle: Text(
                       DateFormat.yMMMd().format(transactions[index].date),
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontFamily: 'OpenSans',
                           fontWeight: FontWeight.bold,
                           color: Colors.grey),
                     ),
                     trailing: MediaQuery.of(context).size.width > 460
                         ? TextButton.icon(
-                            label: Text(
+                            label: const Text(
                               'Delete',
                               style: TextStyle(
-                                  color: const Color.fromARGB(255, 255, 85, 73),
+                                  color: Color.fromARGB(255, 255, 85, 73),
                                   fontWeight: FontWeight.bold),
                             ),
                             onPressed: () => deleteTx(transactions[index].id),
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.delete,
-                              color: const Color.fromARGB(255, 255, 85, 73),
+                              color: Color.fromARGB(255, 255, 85, 73),
                             ))
                         : IconButton(
                             onPressed: () => deleteTx(transactions[index].id),
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.delete,
-                              color: const Color.fromARGB(255, 255, 85, 73),
+                              color: Color.fromARGB(255, 255, 85, 73),
                             )),
                   ),
                 ),
