@@ -84,7 +84,7 @@ class _NewTransactionState extends State<NewTransaction> {
               margin: EdgeInsets.symmetric(vertical: 10),
               child: TextField(
                 decoration: InputDecoration(
-                  labelText: 'Amount',
+                  labelText: 'Amount!',
                   border: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.black),
                   ),

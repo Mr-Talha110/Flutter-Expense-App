@@ -35,7 +35,7 @@ class ChartBar extends StatelessWidget {
                   Container(
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.purple),
-                      color: const Color.fromARGB(255, 236, 236, 236),
+                      color: Color.fromARGB(255, 255, 255, 255),
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
@@ -59,7 +59,7 @@ class ChartBar extends StatelessWidget {
                 child: Text(
                   label,
                   style: TextStyle(
-                      fontFamily: 'OpenSarif', fontWeight: FontWeight.bold),
+                      fontFamily: 'OpenSarif', fontWeight: FontWeight.w400),
                 ),
               ),
             ),
